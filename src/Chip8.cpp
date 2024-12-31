@@ -194,10 +194,10 @@ void Chip8::ExecuteInstruction(uint16_t opcode) {
 
 		case 7:
 		{
-			bool carry = V[y] >= V[x];
+			bool not_borrow = V[y] >= V[x];
 			V[x] = V[y] - V[x];
 
-			if (carry) {
+			if (not_borrow) {
 				V[0xF] = 1;
 			}
 			else {
@@ -257,10 +257,9 @@ void Chip8::ExecuteInstruction(uint16_t opcode) {
 		for (unsigned int col = 0; col < n; ++col) {
 			uint8_t sprite_byte = memory[I + col];
 
-			/*
 			if (coordinate_y + col > DISPLAY_HEIGHT) {
 				break;
-			}*/
+			}
 
 			for (unsigned int row = 0; row < 8; ++row) {
 				uint8_t sprite_bit = (sprite_byte >> 7 - row) & 0x01;
@@ -271,13 +270,9 @@ void Chip8::ExecuteInstruction(uint16_t opcode) {
 				// (x + DISPLAY_WIDTH * y)
 				// just need to keep incrementing x and y
 				//
-				/*
 				if (coordinate_x + row > DISPLAY_WIDTH) {
-					// TODO: verify; reached edge of screen... continue or break?
 					break;
-					//continue;
-					//return;
-				}*/
+				}
 
 				int display_index = (coordinate_x + row) + (DISPLAY_WIDTH * (coordinate_y + col));
 				uint8_t display_bit = display[display_index];

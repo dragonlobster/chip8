@@ -14,7 +14,7 @@ int main() {
 	window.setVerticalSyncEnabled(true);
 
 	// test brix rom
-	chip8.LoadROM("roms/4-flags.ch8");
+	chip8.LoadROM("roms/tests/6-keypad.ch8");
 
 	double accumulator{ 0 };
 	double last_frame_time{ 0 };
