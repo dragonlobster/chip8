@@ -2,6 +2,7 @@
 
 #include <cstdint>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 class Chip8 {
 public:
@@ -26,6 +27,11 @@ public:
 
 	void Cycle();
 
+	bool is_rom_loaded{ false };
+
+	// sound for chip-8
+	sf::Music sound;
+
 	// for debugging opcode (store all opcodes in sequence)
 	//std::vector<uint16_t> opcodes{};
 
@@ -48,5 +54,4 @@ private:
 
 	// execute a single instruction
 	void ExecuteInstruction(uint16_t opcode);
-
 };
