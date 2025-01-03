@@ -39,6 +39,10 @@ Chip8::Chip8() {
 	// random seed
 	srand(time(NULL));
 
+	// initialize sound buffer
+	if (!sound.openFromFile("assets/sound.mp3")) {
+		// sound didn't load
+	}
 }
 
 // random number generator
@@ -69,6 +73,7 @@ void Chip8::LoadROM(const char* filename) {
 		}
 		program_counter = ROM_START_ADDRESS; // initialize program counter
 	}
+	is_rom_loaded = true;
 };
 
 void Chip8::ExecuteInstruction(uint16_t opcode) {
