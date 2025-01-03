@@ -1,9 +1,10 @@
 # Chip-8 Emulator
-
 Chip-8 Emulator written in C++ with the SFML Library. I wrote this emulator as a learning experiment. Big shoutout to the [EmuDev](https://discord.gg/dkmJAes) for being so helpful and kind.
 
-## Chip-8
+## Quickstart
+Once you build the project with `cmake` you must copy the `assets` folder into the root directory of the executable. If running in Debug mode in `Visual Studio`, make sure to set the `currentDir` to `${workspaceRoot}` in the Debug Configuration: `launch.vs.json`. This will ensure the program is able to read `assets/sound.mp3`.
 
+## Chip-8
 This project emulates the original Chip-8 opcodes with no quirks.
 
 ### Components:
