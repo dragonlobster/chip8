@@ -1,7 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Chip8.h"
 #include "DrawUtils.h"
-#include <iostream>
 #include "HandleInput.h"
 #include "tinyfiledialogs.h"
 

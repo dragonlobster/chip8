@@ -12,7 +12,7 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-set(SOURCES src/main.cpp src/Chip8.cpp src/DrawUtils.cpp src/tinyfiledialogs.cpp)
+set(SOURCES src/main.cpp src/Chip8.cpp src/DrawUtils.cpp src/tinyfiledialogs.cpp src/Chip8.h src/DrawUtils.H src/HandleInput.h src/tinyfiledialogs.h)
 add_executable(Chip8 ${SOURCES})
 
 target_link_libraries(Chip8 PRIVATE SFML::Graphics PRIVATE SFML::Audio)

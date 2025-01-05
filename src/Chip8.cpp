@@ -1,10 +1,9 @@
 #include <cstdint>
 #include <fstream>
 #include <vector>
-#include "chip8.h"
+#include "Chip8.h"
 #include <iostream>
 #include <random>
-#include "DrawUtils.h"
 
 // constructor
 Chip8::Chip8() {
@@ -267,7 +266,7 @@ void Chip8::ExecuteInstruction(uint16_t opcode) {
 			}
 
 			for (unsigned int row = 0; row < 8; ++row) {
-				uint8_t sprite_bit = (sprite_byte >> 7 - row) & 0x01;
+				uint8_t sprite_bit = (sprite_byte >> (7 - row)) & 0x01;
 				// gets the most significant bit, i.e. 1011 0111, will
 				// get 1 first, then 0 etc.
 

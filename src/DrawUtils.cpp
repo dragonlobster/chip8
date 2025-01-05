@@ -1,5 +1,6 @@
 #include "DrawUtils.h"
 
+// TODO: can be constexpr
 sf::RectangleShape DrawUtils::add_pixel(sf::Vector2f position, std::uint8_t red, std::uint8_t green, std::uint8_t blue) {
 	sf::RectangleShape pixel{};
 	pixel.setSize({ 1.f, 1.f });
